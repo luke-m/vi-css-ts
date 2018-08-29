@@ -1,16 +1,20 @@
-interface rectOpts {
+interface rectangleOptions {
     width: number;
     height: number;
+    color?: string;
 }
 
-function drawRectangle (options: rectOpts) {
+function drawRectangle (options: rectangleOptions) {
     let width = options.width;
     let height = options.height;
 
     // draw logic
     console.log(
-        `${width * height}`
+        `Your rectangle has the area ${width * height}`
     );
+    if (options.color) {
+        console.log(`btw, your rectangle is ${options.color}`);
+    }
 }
 
-drawRectangle({width: 200, height: 200});
+drawRectangle({width: 200, height: 200, color: 'red'});
